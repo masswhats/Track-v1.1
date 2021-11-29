@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button class="icon-only" (click)="LogOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Requested Pass</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let user of UserList">
+    <ion-card-header>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <!-- <ion-card-title>Fine Due @April,15,2021</ion-card-title> -->
+    </ion-card-header>
+  
+    <ion-card-content>
+      <!-- <p style="font-size: 20px;"><b>{{user.Name}}</b></p> -->
+      <p  style="font-size: 17px;"><b>Vehicle Number :{{user.vehiclenum2}}</b></p>
+      <p style="font-size: 17px;">From :{{user.From2}}</p>
+      <p  style="font-size: 17px;">To :{{user.To2}}</p>
+      <p  style="font-size: 17px;">Reason :{{user.reason}}</p>
+      <p  style="font-size: 17px;">Date :{{user.date}}</p>
+      <ion-footer color="secondary">
+        <!-- <ion-row > -->
+          <ion-col size="6" class="ion-text-center">
+            <ion-button fill="clear" (click)="statusupdate(user.vehiclenum2)"  color="black" class="ion-text-capitalize">
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>Accept</div>
+            </ion-button>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">
+            <ion-button fill="clear" (click)="statusupdate1(user.vehiclenum2)"color="black" class="ion-text-capitalize">
+              <ion-icon name="thumbs-down"></ion-icon>
+              <div>Decline</div>
+            </ion-button>
+          </ion-col>
+        <!-- </ion-row> -->
+      </ion-footer>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
